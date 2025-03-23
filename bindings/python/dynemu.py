@@ -1,7 +1,7 @@
 r"""Wrapper for bindings.h
 
 Generated with:
-C:\Users\Daffin Backup\AppData\Roaming\Python\Python312\Scripts\ctypesgen -ldynemu_shared bindings.h -o bindings\python\dynemu.py --insert-file=bindings.py
+C:\Users\Daffin Backup\AppData\Roaming\Python\Python312\Scripts\ctypesgen -ldynemu_shared bindings.h -o ..\dynemu.py --insert-file=bindings.py
 
 Do not modify this file.
 """
@@ -875,17 +875,17 @@ uint32_t = c_uint# C:/Strawberry/c/x86_64-w64-mingw32/include/stdint.h: 40
 
 uint64_t = c_ulonglong# C:/Strawberry/c/x86_64-w64-mingw32/include/stdint.h: 42
 
-u8 = uint8_t# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynarmic_qmg_decoder\\bindings.h: 3
+u8 = uint8_t# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynemu\\bindings\\python\\src\\bindings.h: 3
 
-u16 = uint16_t# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynarmic_qmg_decoder\\bindings.h: 4
+u16 = uint16_t# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynemu\\bindings\\python\\src\\bindings.h: 4
 
-u32 = uint32_t# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynarmic_qmg_decoder\\bindings.h: 5
+u32 = uint32_t# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynemu\\bindings\\python\\src\\bindings.h: 5
 
-u64 = uint64_t# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynarmic_qmg_decoder\\bindings.h: 6
+u64 = uint64_t# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynemu\\bindings\\python\\src\\bindings.h: 6
 
-Emulator = None# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynarmic_qmg_decoder\\bindings.h: 7
+Emulator = None# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynemu\\bindings\\python\\src\\bindings.h: 7
 
-# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynarmic_qmg_decoder\\bindings.h: 9
+# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynemu\\bindings\\python\\src\\bindings.h: 9
 for _lib in _libs.values():
     if not _lib.has("dynemu_open", "cdecl"):
         continue
@@ -894,7 +894,7 @@ for _lib in _libs.values():
     dynemu_open.restype = POINTER(Emulator)
     break
 
-# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynarmic_qmg_decoder\\bindings.h: 10
+# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynemu\\bindings\\python\\src\\bindings.h: 10
 for _lib in _libs.values():
     if not _lib.has("dynemu_delete", "cdecl"):
         continue
@@ -903,7 +903,7 @@ for _lib in _libs.values():
     dynemu_delete.restype = None
     break
 
-# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynarmic_qmg_decoder\\bindings.h: 11
+# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynemu\\bindings\\python\\src\\bindings.h: 11
 for _lib in _libs.values():
     if not _lib.has("dynemu_mmap", "cdecl"):
         continue
@@ -912,7 +912,7 @@ for _lib in _libs.values():
     dynemu_mmap.restype = None
     break
 
-# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynarmic_qmg_decoder\\bindings.h: 12
+# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynemu\\bindings\\python\\src\\bindings.h: 12
 for _lib in _libs.values():
     if not _lib.has("dynemu_upload_file", "cdecl"):
         continue
@@ -921,7 +921,7 @@ for _lib in _libs.values():
     dynemu_upload_file.restype = c_size_t
     break
 
-# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynarmic_qmg_decoder\\bindings.h: 13
+# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynemu\\bindings\\python\\src\\bindings.h: 13
 for _lib in _libs.values():
     if not _lib.has("dynemu_upload_fls_memory", "cdecl"):
         continue
@@ -930,7 +930,7 @@ for _lib in _libs.values():
     dynemu_upload_fls_memory.restype = u8
     break
 
-# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynarmic_qmg_decoder\\bindings.h: 14
+# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynemu\\bindings\\python\\src\\bindings.h: 14
 for _lib in _libs.values():
     if not _lib.has("dynemu_upload_memstub", "cdecl"):
         continue
@@ -939,7 +939,7 @@ for _lib in _libs.values():
     dynemu_upload_memstub.restype = None
     break
 
-# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynarmic_qmg_decoder\\bindings.h: 15
+# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynemu\\bindings\\python\\src\\bindings.h: 15
 for _lib in _libs.values():
     if not _lib.has("dynemu_upload_memstub_nooffset", "cdecl"):
         continue
@@ -948,7 +948,7 @@ for _lib in _libs.values():
     dynemu_upload_memstub_nooffset.restype = None
     break
 
-# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynarmic_qmg_decoder\\bindings.h: 16
+# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynemu\\bindings\\python\\src\\bindings.h: 16
 for _lib in _libs.values():
     if not _lib.has("dynemu_read_u8", "cdecl"):
         continue
@@ -957,7 +957,7 @@ for _lib in _libs.values():
     dynemu_read_u8.restype = u8
     break
 
-# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynarmic_qmg_decoder\\bindings.h: 17
+# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynemu\\bindings\\python\\src\\bindings.h: 17
 for _lib in _libs.values():
     if not _lib.has("dynemu_read_u16", "cdecl"):
         continue
@@ -966,7 +966,7 @@ for _lib in _libs.values():
     dynemu_read_u16.restype = u16
     break
 
-# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynarmic_qmg_decoder\\bindings.h: 18
+# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynemu\\bindings\\python\\src\\bindings.h: 18
 for _lib in _libs.values():
     if not _lib.has("dynemu_read_u32", "cdecl"):
         continue
@@ -975,7 +975,7 @@ for _lib in _libs.values():
     dynemu_read_u32.restype = u32
     break
 
-# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynarmic_qmg_decoder\\bindings.h: 19
+# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynemu\\bindings\\python\\src\\bindings.h: 19
 for _lib in _libs.values():
     if not _lib.has("dynemu_read_u64", "cdecl"):
         continue
@@ -984,7 +984,7 @@ for _lib in _libs.values():
     dynemu_read_u64.restype = u64
     break
 
-# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynarmic_qmg_decoder\\bindings.h: 20
+# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynemu\\bindings\\python\\src\\bindings.h: 20
 for _lib in _libs.values():
     if not _lib.has("dynemu_write_u8", "cdecl"):
         continue
@@ -993,7 +993,7 @@ for _lib in _libs.values():
     dynemu_write_u8.restype = None
     break
 
-# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynarmic_qmg_decoder\\bindings.h: 21
+# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynemu\\bindings\\python\\src\\bindings.h: 21
 for _lib in _libs.values():
     if not _lib.has("dynemu_write_u16", "cdecl"):
         continue
@@ -1002,7 +1002,7 @@ for _lib in _libs.values():
     dynemu_write_u16.restype = None
     break
 
-# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynarmic_qmg_decoder\\bindings.h: 22
+# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynemu\\bindings\\python\\src\\bindings.h: 22
 for _lib in _libs.values():
     if not _lib.has("dynemu_write_u32", "cdecl"):
         continue
@@ -1011,7 +1011,7 @@ for _lib in _libs.values():
     dynemu_write_u32.restype = None
     break
 
-# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynarmic_qmg_decoder\\bindings.h: 23
+# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynemu\\bindings\\python\\src\\bindings.h: 23
 for _lib in _libs.values():
     if not _lib.has("dynemu_write_u64", "cdecl"):
         continue
@@ -1020,7 +1020,7 @@ for _lib in _libs.values():
     dynemu_write_u64.restype = None
     break
 
-# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynarmic_qmg_decoder\\bindings.h: 24
+# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynemu\\bindings\\python\\src\\bindings.h: 24
 for _lib in _libs.values():
     if not _lib.has("dynemu_read_bytes", "cdecl"):
         continue
@@ -1029,7 +1029,7 @@ for _lib in _libs.values():
     dynemu_read_bytes.restype = None
     break
 
-# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynarmic_qmg_decoder\\bindings.h: 25
+# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynemu\\bindings\\python\\src\\bindings.h: 25
 for _lib in _libs.values():
     if not _lib.has("dynemu_write_bytes", "cdecl"):
         continue
@@ -1038,7 +1038,7 @@ for _lib in _libs.values():
     dynemu_write_bytes.restype = None
     break
 
-# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynarmic_qmg_decoder\\bindings.h: 26
+# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynemu\\bindings\\python\\src\\bindings.h: 26
 for _lib in _libs.values():
     if not _lib.has("dynemu_execute", "cdecl"):
         continue
@@ -1047,7 +1047,7 @@ for _lib in _libs.values():
     dynemu_execute.restype = u32
     break
 
-# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynarmic_qmg_decoder\\bindings.h: 27
+# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynemu\\bindings\\python\\src\\bindings.h: 27
 for _lib in _libs.values():
     if not _lib.has("dynemu_read_reg", "cdecl"):
         continue
@@ -1056,7 +1056,7 @@ for _lib in _libs.values():
     dynemu_read_reg.restype = u32
     break
 
-# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynarmic_qmg_decoder\\bindings.h: 28
+# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynemu\\bindings\\python\\src\\bindings.h: 28
 for _lib in _libs.values():
     if not _lib.has("dynemu_write_reg", "cdecl"):
         continue
@@ -1069,6 +1069,25 @@ for _lib in _libs.values():
 # Begin "bindings.py"
 
 from ctypes import *
+import enum
+
+class Regs(enum.IntEnum):
+    R0 = 0
+    R1 = 1
+    R2 = 2
+    R3 = 3
+    R4 = 4
+    R5 = 5
+    R6 = 6
+    R7 = 7
+    R8 = 8
+    R9 = 9
+    R10 = 10
+    R11 = 11
+    IP = 12
+    SP = 13
+    LR = 14
+    PC = 15
 
 class Dynemu():
     def __init__(self):
