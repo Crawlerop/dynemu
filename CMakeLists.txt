@@ -11,15 +11,19 @@ endif()
 set(BOOST_INCLUDEDIR "${PROJECT_SOURCE_DIR}/externals/dynarmic/externals/ext-boost")
 find_package(Boost 1.57 REQUIRED)
 
-# 02 - Dynarmic
+# 02 - Compile flags
+add_compile_options("$<$<C_COMPILER_ID:MSVC>:/utf-8>")
+add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
+
+add_compile_options("$<$<C_COMPILER_ID:Clang>:-DNOMINMAX>")
+add_compile_options("$<$<CXX_COMPILER_ID:Clang>:-DNOMINMAX>")
+
+
+# 03 - Dynarmic
 set(DYNARMIC_TESTS OFF CACHE BOOL "")
 set(DYNARMIC_FRONTENDS "A32;A64" CACHE STRING "")
 set(DYNARMIC_USE_PRECOMPILED_HEADERS ON CACHE BOOL "")
 add_subdirectory("${PROJECT_SOURCE_DIR}/externals/dynarmic")
-
-# 03 - UTF-8 msvc
-add_compile_options("$<$<C_COMPILER_ID:MSVC>:/utf-8>")
-add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
 
 # 04 - My code
 add_subdirectory(src)
