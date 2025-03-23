@@ -1,4 +1,3 @@
-[submodule "dynarmic"]
-    path = externals/dynarmic
-    url = https://github.com/Borked3DS/dynarmic.git
-    branch = master 
+[submodule "externals/dynarmic"]
+	path = externals/dynarmic
+	url = https://github.com/Borked3DS/dynarmic.git
