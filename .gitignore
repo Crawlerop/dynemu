@@ -32,12 +32,11 @@
 *.app
 *.fls
 
-# Let git use modules
-externals/dynarmic/
+# Output folders
 build/
-uni_libs/
 
 # My test files
+uni_libs/
 *.bin
 samples/
 src/libfiles/
