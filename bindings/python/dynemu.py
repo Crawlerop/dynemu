@@ -1,7 +1,7 @@
 r"""Wrapper for bindings.h
 
 Generated with:
-C:\Users\Daffin Backup\AppData\Roaming\python\python312\scripts\ctypesgen --cpp=clang -E -ldynemu_shared bindings.h -o ..\dynemu.py --insert-file=bindings.py
+C:\Users\Daffin Backup\AppData\Roaming\python\python312\scripts\ctypesgen --cpp=clang -E -ldynemu bindings.h -o ..\dynemu.py --insert-file=bindings.py
 
 Do not modify this file.
 """
@@ -860,7 +860,7 @@ del loaderclass
 add_library_search_dirs([])
 
 # Begin libraries
-_libs["dynemu_shared"] = load_library("dynemu_shared")
+_libs["dynemu"] = load_library("dynemu")
 
 # 1 libraries
 # End libraries
