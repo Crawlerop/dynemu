@@ -103,7 +103,8 @@
         "shared_mutex": "cpp",
         "source_location": "cpp",
         "stack": "cpp",
-        "stdfloat": "cpp"
+        "stdfloat": "cpp",
+        "resumable": "cpp"
     },
     "C_Cpp.default.compilerPath": "d:\\Daffin\\vs_com_2022\\VC\\Tools\\MSVC\\14.42.34433\\bin\\Hostx64\\x64\\cl.exe",
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",

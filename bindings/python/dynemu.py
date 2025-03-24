@@ -1,7 +1,7 @@
 r"""Wrapper for bindings.h
 
 Generated with:
-C:\Users\Daffin Backup\AppData\Roaming\Python\Python312\Scripts\ctypesgen -ldynemu_shared bindings.h -o ..\dynemu.py --insert-file=bindings.py
+C:\Users\Daffin Backup\AppData\Roaming\python\python312\scripts\ctypesgen --cpp=clang -E -ldynemu_shared bindings.h -o ..\dynemu.py --insert-file=bindings.py
 
 Do not modify this file.
 """
@@ -867,13 +867,13 @@ _libs["dynemu_shared"] = load_library("dynemu_shared")
 
 # No modules
 
-uint8_t = c_ubyte# C:/Strawberry/c/x86_64-w64-mingw32/include/stdint.h: 36
+uint8_t = c_ubyte# D:\\Daffin\\vs_com_2022\\VC\\Tools\\MSVC\\14.42.34433\\include\\stdint.h: 22
 
-uint16_t = c_ushort# C:/Strawberry/c/x86_64-w64-mingw32/include/stdint.h: 38
+uint16_t = c_ushort# D:\\Daffin\\vs_com_2022\\VC\\Tools\\MSVC\\14.42.34433\\include\\stdint.h: 23
 
-uint32_t = c_uint# C:/Strawberry/c/x86_64-w64-mingw32/include/stdint.h: 40
+uint32_t = c_uint# D:\\Daffin\\vs_com_2022\\VC\\Tools\\MSVC\\14.42.34433\\include\\stdint.h: 24
 
-uint64_t = c_ulonglong# C:/Strawberry/c/x86_64-w64-mingw32/include/stdint.h: 42
+uint64_t = c_ulonglong# D:\\Daffin\\vs_com_2022\\VC\\Tools\\MSVC\\14.42.34433\\include\\stdint.h: 25
 
 u8 = uint8_t# D:\\Daffin\\TheNewMobileTools\\subtask\\c_subproj\\dynemu\\bindings\\python\\src\\bindings.h: 3
 

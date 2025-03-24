@@ -1,7 +1,9 @@
-#include "shared/sys_emulator.hpp"
-#include "libdynemu.hpp"
+#include "dynemu/sys_emulator.hpp"
+using namespace Dynemu;
 
 extern "C" {
+     #include "dynemu/libdynemu.h"
+
      Emulator *dynemu_open() {
           auto temp = new Emulator();
           return temp;

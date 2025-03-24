@@ -1,32 +1,61 @@
 cmake_minimum_required(VERSION 3.10.0)
-project(qmgdec VERSION 0.1.0 LANGUAGES C CXX)
+project(Dynemu VERSION 0.1.0 LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 20)
+
+if (NOT DEFINED CMAKE_CXX_VISIBILITY_PRESET AND
+    NOT DEFINED CMAKE_VISIBILITY_INLINES_HIDDEN)
+  set(CMAKE_CXX_VISIBILITY_PRESET hidden)
+  set(CMAKE_VISIBILITY_INLINES_HIDDEN YES)
+endif ()
 
 if(POLICY CMP0167)
   cmake_policy(SET CMP0167 OLD)
 endif()
+
+# Variables
+if (DEFINED Dynemu_SHARED_LIBS)
+    set(BUILD_SHARED_LIBS "${Dynemu_SHARED_LIBS}")
+endif ()
 
 # 01 - Boost first
 set(BOOST_INCLUDEDIR "${PROJECT_SOURCE_DIR}/externals/dynarmic/externals/ext-boost")
 find_package(Boost 1.57 REQUIRED)
 
 # 02 - Compile flags
-add_compile_options("$<$<C_COMPILER_ID:MSVC>:/utf-8>")
-add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
+add_compile_options("$<$<C_COMPILER_ID:MSVC>:/utf-8>" "$<$<C_COMPILER_ID:MSVC>:/std:c++20>")
+add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>" "$<$<CXX_COMPILER_ID:MSVC>:/std:c++20>")
 
-add_compile_options("$<$<C_COMPILER_ID:Clang>:-DNOMINMAX>")
-add_compile_options("$<$<CXX_COMPILER_ID:Clang>:-DNOMINMAX>")
+if ( MSVC )
+  set_target_properties( dynarmic PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_DEBUG ${CMAKE_INSTALL_PREFIX} )
+  set_target_properties( dynarmic PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_RELEASE ${CMAKE_INSTALL_PREFIX} )
 
+  set_target_properties( mcl PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_DEBUG ${CMAKE_INSTALL_PREFIX} )
+  set_target_properties( mcl PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_RELEASE ${CMAKE_INSTALL_PREFIX} )
+endif ()
 
-# 03 - Dynarmic
-set(DYNARMIC_TESTS OFF CACHE BOOL "")
-set(DYNARMIC_FRONTENDS "A32;A64" CACHE STRING "")
-set(DYNARMIC_USE_PRECOMPILED_HEADERS ON CACHE BOOL "")
-add_subdirectory("${PROJECT_SOURCE_DIR}/externals/dynarmic")
+add_definitions(-D_CRT_SECURE_NO_WARNINGS -DNOMINMAX)
+
+# 03 - Externals
+add_subdirectory(externals)
 
 # 04 - My code
 add_subdirectory(src)
+
+# 05 - Generate Include
+include(GenerateExportHeader)
+generate_export_header(dynemu EXPORT_FILE_NAME include/dynemu/export.h)
+target_compile_definitions(
+    dynemu PUBLIC "$<$<NOT:$<BOOL:${BUILD_SHARED_LIBS}>>:DYNEMU_STATIC_DEFINE>")
+target_include_directories(
+    dynemu PUBLIC "$<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/include>")
+
+# 06 - Package
+string(COMPARE EQUAL "${CMAKE_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}" is_top_level)
+option(Dynemu_INCLUDE_PACKAGING "Include packaging rules for Dynemu" "${is_top_level}")
+if (Dynemu_INCLUDE_PACKAGING)
+    add_subdirectory(pack)
+endif ()
 
 #add_library(dynarmic STATIC IMPORTED)
 

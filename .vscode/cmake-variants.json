@@ -1,0 +1,24 @@
+{
+    "buildType": {
+      "default": "Debug",
+      "description": "Build Type Selection",
+      "choices": {
+        "Debug": {
+          "short": "Debug",
+          "long": "Build with no optimizations and debugging information",
+          "buildType": "Debug",
+          "settings": {
+            "BUILD_SHARED_LIBS": "ON"
+          }
+        },
+        "Release": {
+          "short": "Release",
+          "long": "Build with optimizations and some debuging information",
+          "buildType": "Release",
+          "settings": {
+            "BUILD_SHARED_LIBS": "ON"
+          }
+        }
+      }
+    }
+  }
