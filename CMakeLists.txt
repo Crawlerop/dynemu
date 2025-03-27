@@ -26,13 +26,13 @@ find_package(Boost 1.57 REQUIRED)
 add_compile_options("$<$<C_COMPILER_ID:MSVC>:/utf-8>" "$<$<C_COMPILER_ID:MSVC>:/std:c++20>")
 add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>" "$<$<CXX_COMPILER_ID:MSVC>:/std:c++20>")
 
-if ( MSVC )
-  set_target_properties( dynarmic PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_DEBUG ${CMAKE_INSTALL_PREFIX} )
-  set_target_properties( dynarmic PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_RELEASE ${CMAKE_INSTALL_PREFIX} )
+# if ( MSVC )
+#   set_target_properties( dynarmic PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_DEBUG ${CMAKE_INSTALL_PREFIX} )
+#   set_target_properties( dynarmic PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_RELEASE ${CMAKE_INSTALL_PREFIX} )
 
-  set_target_properties( mcl PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_DEBUG ${CMAKE_INSTALL_PREFIX} )
-  set_target_properties( mcl PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_RELEASE ${CMAKE_INSTALL_PREFIX} )
-endif ()
+#   set_target_properties( mcl PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_DEBUG ${CMAKE_INSTALL_PREFIX} )
+#   set_target_properties( mcl PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_RELEASE ${CMAKE_INSTALL_PREFIX} )
+# endif ()
 
 add_definitions(-D_CRT_SECURE_NO_WARNINGS -DNOMINMAX)
 
