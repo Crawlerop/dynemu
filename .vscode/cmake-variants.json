@@ -18,6 +18,22 @@
           "settings": {
             "BUILD_SHARED_LIBS": "ON"
           }
+        },
+        "DebugStatic": {
+          "short": "DebugStatic",
+          "long": "Build with no optimizations and debugging information",
+          "buildType": "Debug",
+          "settings": {
+            "BUILD_SHARED_LIBS": "OFF"
+          }
+        },
+        "ReleaseStatic": {
+          "short": "ReleaseStatic",
+          "long": "Build with optimizations and some debuging information",
+          "buildType": "Release",
+          "settings": {
+            "BUILD_SHARED_LIBS": "OFF"
+          }
         }
       }
     }

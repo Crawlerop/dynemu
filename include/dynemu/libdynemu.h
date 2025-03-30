@@ -3,7 +3,9 @@
 #include "dynemu/export.h"
 
 #ifdef __cplusplus
+#if defined(dynemu_EXPORTS) || defined(DYNEMU_STATIC_DEFINE)
 using namespace Dynemu;
+#endif
 
 extern "C" {
 #endif
@@ -14,9 +16,12 @@ extern "C" {
 
     #ifndef __cplusplus
     typedef uint8_t bool;
-    typedef struct Emulator Emulator;
     #endif
 
+    #if !defined(dynemu_EXPORTS) && !defined(DYNEMU_STATIC_DEFINE)
+    typedef struct Emulator Emulator;
+    #endif
+    
     DYNEMU_EXPORT Emulator *dynemu_open();
     DYNEMU_EXPORT void dynemu_delete(Emulator *e);
     DYNEMU_EXPORT void dynemu_mmap(Emulator *e, u32 vaddr, u32 size);
